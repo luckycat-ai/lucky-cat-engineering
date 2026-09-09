@@ -46,9 +46,11 @@ than let "the feature exists" imply "the journey works".
 They have never been restored. A backup whose restore has never been exercised is
 a hypothesis, and I do not describe it otherwise.
 
-**Uptime is not instrumented on the ordering path.** External monitoring covers
-the public marketing site. Nothing probes the ordering flow, sign-in, or the
-server-side functions, so I have no uptime figure and do not quote one.
+**Uptime is not measured across the whole system.** External monitoring does not
+cover every surface, so I have no defensible uptime figure and do not quote one.
+Closing that gap is a known piece of work; I am not describing the current
+coverage in public, because a map of what is unmonitored is more useful to
+somebody attacking the system than to somebody evaluating me.
 
 **Semantic quality of live model output is not evaluated.** The evals prove guard
 and parser behaviour deterministically. Whether a given answer is *good* is not

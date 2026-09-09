@@ -142,14 +142,16 @@ Detection was inventoried per subsystem, and the honest finding was not "we need
 more alarms".
 
 Two alarms had been firing, unread, for weeks. One of them was **wrong 18 times
-in 27 days**: the nightly backup had never failed — an optional mirror to a drive
-that was not attached had, and the script treated any replica failure as a lost
-backup. The message even claimed the backup existed only on one machine while the
-off-platform copy was verifiably in place.
+in 27 days**: the nightly backup had never failed. What had failed was an
+*optional* secondary copy, and the script treated any replica failure as a lost
+backup — so it reported catastrophe while the off-platform copy was verifiably in
+place.
 
-The fix was to make severity proportional: an unmounted optional target is a
-warning, a failed off-platform copy stays an error, and the final message
-distinguishes the two.
+The fix was to make severity proportional to what was actually lost. An optional
+target being unavailable is a warning. A failed off-platform copy stays an error,
+because that is the only copy outside the primary platform. And the failure
+message now names which of the two happened, instead of always claiming the
+worse one.
 
 **An alarm that has cried wolf 18 times is an alarm nobody believes on the day it
 is right.** Calibration is not a smaller problem than coverage.
