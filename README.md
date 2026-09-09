@@ -155,15 +155,13 @@ customer data, no internal dashboard, no operator tooling.
 
 ## Evidence and limitations
 
-The [evidence page](docs/evidence-and-limitations.md) states both sides. The
-short version of the limitations, because it belongs on the first screen:
+The [evidence page](docs/evidence-and-limitations.md) states both sides — how
+each claim here is known, and where the engineering has not yet been tested.
 
-**There are no paying customers.** No real customer has ordered and none has
-paid. The payment rail was exercised end to end in live infrastructure with a
-small amount of my own money — that proves the integration, not demand.
-Onboarding has never run in production, disaster recovery has never been
-exercised, and there are no uptime or scale figures here because I have no
-instrumented ones to quote.
+The short version, because it belongs on the first screen: the provisioning path
+has never been executed in production, disaster recovery has never been
+exercised, the semantic quality of live model output is not evaluated, and there
+are no uptime or scale figures because I have no instrumented ones to quote.
 
 ---
 

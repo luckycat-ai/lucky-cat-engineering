@@ -7,6 +7,9 @@ The limitations are not buried. Several of them are the most useful thing on thi
 page, because a system's maturity is described more accurately by what it has not
 yet had to survive than by what it does.
 
+**Scope.** Commercial adoption and business outcomes are outside the scope of
+this engineering case study. What follows is about the engineering.
+
 ---
 
 ## Proven
@@ -18,7 +21,7 @@ yet had to survive than by what it does.
 | Isolation tests can actually fail | the suite asserts that the protected views contain rows, so "zero rows" cannot be a false green from an empty table |
 | Deterministic gates run in CI | unit tests, AI guard evals, commercial-rule consistency, accessibility, SEO coherence, sub-processor coverage, canonical/generated drift, repository-map validity |
 | AI guards are covered by evals | six guards, one eval group each, with a minimum case count per group so the dataset cannot be quietly emptied |
-| The payment rail works in live infrastructure | exercised end to end against the live payment provider — see the limitation below on what that does **not** mean |
+| The payment rail works in live infrastructure | exercised end to end against the live payment provider, not only against a sandbox |
 | Release is separated from merge | trunk and the production pointer are distinct; promotion is an explicit command, and rollback is the same operation reversed |
 | An exact-SHA preview can be validated | a build of the exact tree is uploaded and asserted against before promotion |
 | Backups leave the primary platform nightly | the object exists off-platform, verified by listing it, and its contents were cross-checked against the live database |
@@ -27,15 +30,6 @@ yet had to survive than by what it does.
 ---
 
 ## Not proven
-
-**There are no paying customers.** No real customer has placed an order and no
-customer has paid. One local business tested the product; that is a test, not
-traction. Nothing on this page or elsewhere in this repository should be read as
-revenue, users or adoption.
-
-**The live payment exercise was mine.** The rail was exercised with a small
-amount of my own money to prove the path works end to end. It proves the
-integration; it proves nothing about demand.
 
 **Customer onboarding has never run end to end.** The provisioning path — the
 first thing a new business would go through — has never been executed in
@@ -68,8 +62,8 @@ documented as an accepted risk rather than presented as clean.
 
 ## Numbers deliberately absent
 
-There are no metrics on this page — no request counts, no latencies, no uptime
-percentage, no user numbers, no revenue.
+There are no engineering metrics on this page — no request counts, no
+latencies, no uptime percentage, no throughput.
 
 Not because they would be unflattering, but because I do not have instrumented,
 defensible figures for them, and a number that cannot be defended in an interview

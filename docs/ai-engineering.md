@@ -119,7 +119,7 @@ This distinction matters more than the eval count.
 - the semantic quality of any given live model response;
 - that a future model version behaves like the current one;
 - that retrieval returns the *best* chunk rather than a sufficient one;
-- any business outcome.
+- that a guard passing means the answer was useful to the person who asked.
 
 Deterministic evals over guards and parsers are cheap, fast and run on every
 push. Semantic quality evaluation is a different instrument with a different
